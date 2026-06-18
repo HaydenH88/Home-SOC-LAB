@@ -28,7 +28,7 @@ This project documents the creation of a Home Security Operations Center (SOC) u
 ## Project Progress
 
 - [x] Create GitHub Repository
-- [ ] Create Azure Resources
+- [x] Create Azure Resources
 - [x] Install Sysmon
 - [x] Verify Sysmon Logging
 - [ ] Connect Logs to Sentinel
