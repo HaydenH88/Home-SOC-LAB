@@ -37,3 +37,18 @@ This project documents the creation of a Home Security Operations Center (SOC) u
 - [ ] Generate Test Attacks
 - [ ] Investigate Incidents
 - [ ] Complete Documentation
+
+
+## Implemented Detections
+
+### 1. Multiple Failed Logons
+- Data Source: Windows Security Logs
+- Event ID: 4625
+- MITRE ATT&CK: T1110 (Brute Force)
+- Status: Tested and validated
+
+### 2. New Local Administrator Account Created
+- Data Source: Windows Security Logs
+- Event IDs: 4720, 4732
+- MITRE ATT&CK: T1136 (Create Account)
+- Status: Tested and validated
