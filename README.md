@@ -88,3 +88,10 @@ Home-SOC-LAB/
 ├── screenshots/
 └── README.md
 ```
+
+## Repository Contents
+
+- [Detection Rules](./detection-rules)
+- [Incident Reports](./incident-reports)
+- [KQL Queries](./kql)
+- [Architecture Diagram](./architecture)
