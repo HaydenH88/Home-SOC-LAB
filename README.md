@@ -31,12 +31,12 @@ This project documents the creation of a Home Security Operations Center (SOC) u
 - [x] Create Azure Resources
 - [x] Install Sysmon
 - [x] Verify Sysmon Logging
-- [ ] Connect Logs to Sentinel
-- [ ] Create KQL Queries
-- [ ] Build Detection Rules
-- [ ] Generate Test Attacks
-- [ ] Investigate Incidents
-- [ ] Complete Documentation
+- [x] Connect Logs to Sentinel
+- [x] Create KQL Queries
+- [x] Build Detection Rules
+- [x] Generate Test Attacks
+- [x] Investigate Incidents
+- [x] Complete Documentation
 
 
 ## Implemented Detections
@@ -52,3 +52,22 @@ This project documents the creation of a Home Security Operations Center (SOC) u
 - Event IDs: 4720, 4732
 - MITRE ATT&CK: T1136 (Create Account)
 - Status: Tested and validated
+
+## Detection Rules
+
+| Detection | Event ID |
+|------------|-----------|
+| Multiple Failed Logons | 4625 |
+| New Local Administrator Account Created | 4720 |
+| Privileged Logon | 4672 |
+
+## Skills Demonstrated
+
+- Microsoft Sentinel
+- Log Analytics
+- KQL
+- Azure Arc
+- Windows Event Logging
+- Detection Engineering
+- Incident Response
+- SIEM Alerting
