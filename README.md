@@ -1,73 +1,90 @@
-# Home SOC Lab
+# Home-SOC-LAB
 
 ## Overview
-This project documents the creation of a Home Security Operations Center (SOC) using Microsoft Sentinel, Sysmon, Windows Event Logs, and Kusto Query Language (KQL).
+
+This project documents the design and implementation of a Home Security Operations Center (SOC) using Microsoft Sentinel, Azure Log Analytics, Azure Arc, Sysmon, Windows Event Logs, and Kusto Query Language (KQL). The lab simulates a real-world SOC environment by collecting endpoint telemetry, creating custom detections, generating security incidents, and performing investigations.
 
 ## Objectives
-- Collect endpoint telemetry using Sysmon
-- Centralize logs in Microsoft Sentinel
-- Develop KQL detection queries
-- Create analytics rules and incidents
-- Perform threat hunting activities
-- Map detections to MITRE ATT&CK techniques
 
-## Lab Environment
+* Collect endpoint telemetry using Sysmon and Windows Event Logs
+* Centralize security logs in Microsoft Sentinel
+* Develop KQL-based detection queries
+* Create and validate Sentinel analytics rules
+* Generate and investigate security incidents
+* Perform threat hunting activities
+* Map detections to MITRE ATT&CK techniques
+* Document detection engineering and incident response workflows
+
+## Lab Architecture
 
 ### Systems
-- Windows 11 Desktop
-- Kali Linux
-- macOS Management Workstation
+
+* Windows 11 Endpoint
+* Kali Linux Attack Platform
+* macOS Management Workstation
 
 ### Security Tools
-- Microsoft Sentinel
-- Sysmon
-- Azure Monitor Agent
-- KQL
-- Event Viewer
+
+* Microsoft Sentinel
+* Azure Log Analytics
+* Azure Arc
+* Azure Monitor Agent (AMA)
+* Sysmon
+* Kusto Query Language (KQL)
+* Event Viewer
 
 ## Project Progress
 
-- [x] Create GitHub Repository
-- [x] Create Azure Resources
-- [x] Install Sysmon
-- [x] Verify Sysmon Logging
-- [x] Connect Logs to Sentinel
-- [x] Create KQL Queries
-- [x] Build Detection Rules
-- [x] Generate Test Attacks
-- [x] Investigate Incidents
-- [x] Complete Documentation
-
+* [x] Create GitHub Repository
+* [x] Create Azure Resources
+* [x] Install Sysmon
+* [x] Verify Sysmon Logging
+* [x] Connect Logs to Sentinel
+* [x] Create KQL Queries
+* [x] Build Detection Rules
+* [x] Generate Test Activity
+* [x] Investigate Incidents
+* [x] Complete Documentation
 
 ## Implemented Detections
 
-### 1. Multiple Failed Logons
-- Data Source: Windows Security Logs
-- Event ID: 4625
-- MITRE ATT&CK: T1110 (Brute Force)
-- Status: Tested and validated
-
-### 2. New Local Administrator Account Created
-- Data Source: Windows Security Logs
-- Event IDs: 4720, 4732
-- MITRE ATT&CK: T1136 (Create Account)
-- Status: Tested and validated
+| Detection                               | Event ID   | MITRE ATT&CK           | Status |
+| --------------------------------------- | ---------- | ---------------------- | ------ |
+| Multiple Failed Logons                  | 4625       | T1110 - Brute Force    | Tested |
+| New Local Administrator Account Created | 4720, 4732 | T1136 - Create Account | Tested |
+| Privileged Logon                        | 4672       | T1078 - Valid Accounts | Tested |
 
 ## Detection Rules
 
-| Detection | Event ID |
-|------------|-----------|
-| Multiple Failed Logons | 4625 |
-| New Local Administrator Account Created | 4720 |
-| Privileged Logon | 4672 |
+See the `detection-rules` directory for full detection logic, KQL queries, testing procedures, and screenshots.
+
+## Incident Reports
+
+See the `incident-reports` directory for documented investigations and incident response activities.
 
 ## Skills Demonstrated
 
-- Microsoft Sentinel
-- Log Analytics
-- KQL
-- Azure Arc
-- Windows Event Logging
-- Detection Engineering
-- Incident Response
-- SIEM Alerting
+* Microsoft Sentinel Administration
+* Azure Log Analytics
+* Azure Arc Onboarding
+* Azure Monitor Agent Deployment
+* Windows Event Log Analysis
+* Sysmon Configuration and Validation
+* Detection Engineering
+* KQL Query Development
+* Security Monitoring
+* Incident Response
+* Threat Hunting
+* MITRE ATT&CK Mapping
+
+## Repository Structure
+
+```text
+Home-SOC-LAB/
+├── architecture/
+├── detection-rules/
+├── incident-reports/
+├── kql/
+├── screenshots/
+└── README.md
+```
