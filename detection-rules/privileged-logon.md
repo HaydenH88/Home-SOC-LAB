@@ -64,11 +64,11 @@ The detection successfully identified privileged account logon activity and gene
 
 ### Log Analytics Results
 
-![Privileged Logon Query](../screenshots/privileged-logon-query.png)
+![Privileged Logon Query](../screenshots/successful-logons.kql.png)
 
 ### Sentinel Incident
 
-![Privileged Logon Incident](../screenshots/privileged-logon-incident.png)
+![Privileged Logon Incident](../screenshots/sentinel-privileged-logon-detection.png)
 
 ## Lessons Learned
 
