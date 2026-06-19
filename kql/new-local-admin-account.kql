@@ -1,0 +1,3 @@
+Event
+| where EventID in (4720, 4732)
+| project TimeGenerated, Computer, EventID, RenderedDescription
