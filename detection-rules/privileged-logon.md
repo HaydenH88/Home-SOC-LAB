@@ -62,10 +62,6 @@ The detection successfully identified privileged account logon activity and gene
 
 ![Privileged Logon Rule](../screenshots/privileged-logon-rule.png)
 
-### Log Analytics Results
-
-![Privileged Logon Query](../screenshots/successful-logons.kql.png)
-
 ### Sentinel Incident
 
 ![Privileged Logon Incident](../screenshots/sentinel-privileged-logon-detection.png)
