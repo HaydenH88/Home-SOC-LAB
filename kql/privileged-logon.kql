@@ -1,0 +1,3 @@
+Event
+| where EventID == 4672
+| project TimeGenerated, Computer, RenderedDescription
