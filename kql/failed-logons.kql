@@ -1,0 +1,4 @@
+Event
+| where EventID == 4625
+| summarize FailedAttempts=count() by Computer
+| where FailedAttempts >= 3
