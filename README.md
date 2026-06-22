@@ -81,8 +81,19 @@ See the `incident-reports` directory for documented investigations and incident 
 
 ```text
 Home-SOC-LAB/
+│
+├── active-directory/
+│   ├── README.md
+│   ├── domain-controller-setup.md
+│   ├── screenshots/
+│   └── diagrams/
+│
 ├── architecture/
 ├── detection-rules/
+│   ├── multiple-failed-logons.md
+│   ├── new-local-admin-accounts.md
+│   └── privileged-logon.md
+│
 ├── incident-reports/
 ├── kql/
 ├── screenshots/
