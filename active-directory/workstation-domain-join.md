@@ -36,13 +36,13 @@ After rebooting, the workstation was successfully joined to the domain and appea
 
 ### Domain Join Configuration
 
-![WIN11-01 Domain Join](../screenshots/win11-domain-join.png)
+![WIN11-01 Domain Join](./screenshots/win11-domain-join.png)
 
 *Figure 1. WIN11-01 successfully joined to the homesoc.local domain.*
 
 ### Computer Object in Active Directory
 
-![WIN11-01 Computer Object](../screenshots/win11-01-computer-object.png)
+![WIN11-01 Computer Object](./screenshots/win11-01-computer-object.png)
 
 *Figure 2. WIN11-01 computer account automatically created and visible within Active Directory.*
 
