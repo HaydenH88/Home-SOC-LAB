@@ -2,15 +2,11 @@
 
 ## Overview
 
-This lab demonstrates the process of joining a Windows 11 Pro workstation to the Active Directory domain hosted on the Windows Server 2022 Domain Controller (DC01).
+This lab documents the process of joining a Windows 11 Pro workstation (WIN11-01) to the Active Directory domain hosted on the Windows Server 2022 Domain Controller (DC01).
 
 ## Objective
 
-* Configure a Windows 11 Pro workstation.
-* Verify network connectivity to the Domain Controller.
-* Configure DNS to use the Domain Controller.
-* Join the workstation to the Active Directory domain.
-* Verify successful domain membership.
+The objective of this exercise was to configure a Windows 11 workstation, establish communication with the Domain Controller, and join the workstation to the `homesoc.local` Active Directory domain.
 
 ## Environment
 
@@ -19,115 +15,47 @@ This lab demonstrates the process of joining a Windows 11 Pro workstation to the
 * Hostname: DC01
 * Operating System: Windows Server 2022
 * Domain: homesoc.local
-* IP Address: 10.0.2.15
 
 ### Workstation
 
 * Hostname: WIN11-01
 * Operating System: Windows 11 Pro
-* IP Address: 10.0.2.3
 
-## Configuration Steps
+## Domain Join Process
 
-### 1. Verify Connectivity
+1. Verified network connectivity between WIN11-01 and DC01.
+2. Configured the workstation to use the Domain Controller as its DNS server.
+3. Opened System Properties and selected the option to join a domain.
+4. Entered the domain name `homesoc.local`.
+5. Authenticated using domain administrator credentials.
+6. Successfully joined the workstation to the domain and restarted the system.
 
-On WIN11-01, verify communication with the Domain Controller:
+## Verification
 
-```cmd
-ping 10.0.2.15
-```
+After rebooting, the workstation was successfully joined to the domain and appeared as a computer object within Active Directory Users and Computers on the Domain Controller.
 
-Successful replies confirmed network connectivity.
+### Domain Join Configuration
 
-### 2. Configure DNS
+![WIN11-01 Domain Join](../screenshots/win11-domain-join.png)
 
-The workstation initially used the home router for DNS resolution, preventing Active Directory domain discovery.
+*Figure 1. WIN11-01 successfully joined to the homesoc.local domain.*
 
-Updated the IPv4 settings to use the Domain Controller as the preferred DNS server:
+### Computer Object in Active Directory
 
-```text
-Preferred DNS Server: 10.0.2.15
-```
+![WIN11-01 Computer Object](../screenshots/win11-01-computer-object.png)
 
-Verified DNS resolution:
-
-```cmd
-nslookup homesoc.local
-```
-
-### 3. Join the Domain
-
-Opened System Properties:
-
-```text
-sysdm.cpl
-```
-
-Navigated to:
-
-```text
-Computer Name → Change
-```
-
-Selected:
-
-```text
-Member of: Domain
-```
-
-Entered:
-
-```text
-homesoc.local
-```
-
-Authenticated using domain administrator credentials.
-
-### 4. Reboot Workstation
-
-Restarted WIN11-01 to complete domain membership changes.
-
-### 5. Verify Domain Membership
-
-Logged into the workstation using a domain account:
-
-```text
-HOMESOC\jsmith
-```
-
-Confirmed successful authentication.
-
-Verified WIN11-01 appeared in:
-
-```text
-Active Directory Users and Computers
-→ Computers
-```
+*Figure 2. WIN11-01 computer account automatically created and visible within Active Directory.*
 
 ## Results
 
-The workstation successfully joined the Active Directory domain and was able to authenticate domain users. DNS resolution, domain discovery, and authentication services were functioning correctly.
+The workstation was successfully joined to the `homesoc.local` domain. Communication between the workstation and Domain Controller was verified, DNS resolution was functioning correctly, and Active Directory automatically created the computer object for WIN11-01.
 
 ## Skills Demonstrated
 
 * Active Directory Administration
-* DNS Configuration
-* Windows Domain Management
-* Network Troubleshooting
 * Windows Server 2022
 * Windows 11 Administration
-
-## Screenshots
-
-### Domain Join Configuration
-
-![Domain Join](../screenshots/domain-join.png)
-
-### Successful Domain Membership
-
-![Domain Joined](../screenshots/domain-membership.png)
-
-### Computer Object in Active Directory
-
-![Computer Object](../screenshots/ad-computer-object.png)
-
+* DNS Configuration
+* Domain Management
+* Network Troubleshooting
+* Enterprise Identity Management
